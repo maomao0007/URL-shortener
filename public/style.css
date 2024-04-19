@@ -1,0 +1,26 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  margin: 80px 0;
+}
+
+.form-control {
+  width: 800px; 
+}
+
+.btn {
+  margin: 20px 0;
+  /* width: 200px; */
+}
