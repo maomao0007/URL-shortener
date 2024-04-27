@@ -1,0 +1,26 @@
+{{#if shortURL}}
+
+ <!-- 當成功生成短網址時 -->
+<div class="d-flex justify-content-center align-items-center flex-column">
+<h3 class="mt-0">Success! Please use this link:</h3>
+<a href="{{ shortURL }}" class="shortURL text-center mb-1">http://localhost:3000/{{ shortURL }}</a>
+<button class="btn btn-outline-primary mx-auto d-block mb-2" type="button" onclick="copyURL()">Copy</button>
+<a href="/" class="mt-2 text-success">Home</a>
+
+<script>
+  function copyURL() {
+    const URL = document.querySelector(".shortURL")
+    navigator.clipboard.writeText(URL.innerText)
+    .then(() => alert('已複製該網址'))
+    .catch(error => console.log(error))
+    }
+</script>
+</div> 
+ 
+{{else}}
+<!-- 當尚未生成短網址時 -->
+<form action="/shorten" method="POST" class="d-flex justify-content-center align-items-center flex-column">
+<input name="inputURL" class="form-control" type="url" placeholder="Input URL here" required aria-label="default input example">
+<button id="url" type="submit" class="btn btn-outline-primary" style="width: 100px">Shorten</button>
+</form>
+{{/if}}
