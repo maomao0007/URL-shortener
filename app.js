@@ -14,6 +14,11 @@ app.use(express.urlencoded({ extended: true })); // 解析 POST 請求的數據
 const fs = require("fs");
 const path = require("path");
 
+// 首頁路由處理
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
 // 定義數據檔案路徑
 const dataFilePath = path.join(__dirname, "data.json");
 
@@ -60,10 +65,16 @@ app.post('/shorten', (req, res) => {
   }
 });
 
-// 在 GET /:shortURL 路由中，使用初始化時建立的 urlData 對象來查找原始 URL
+//當使用者貼上短網址時，進行以下路由處理
 app.get('/:shortURL', (req, res) => {
   const shortURL = req.params.shortURL; 
-  const originalURL = urlData[shortURL];
+  let originalURL
+  for (const key in urlData) {
+    if (urlData[key] === shortURL) {
+      originalURL = key;
+      break;
+    }
+  }
 
   if (originalURL) {
     res.redirect(originalURL);
@@ -71,11 +82,6 @@ app.get('/:shortURL', (req, res) => {
     res.status(404).send("The short URL was not found.");
   }
 });
-
-// 首頁路由處理
-app.get('/', (req, res) => {
-  res.render('index')
-})
 
 // 啟動伺服器
 app.listen(port, () => {
