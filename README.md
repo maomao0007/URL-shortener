@@ -36,3 +36,8 @@ This website allows you to shorten URLs, making them more concise and saving spa
 - Node.js 18.15.0
 - Nodemon 3.1.0
 - npm 9.5.0
+
+## Screenshots
+![screencapture_URL-shortener](https://github.com/maomao0007/Restaurant-List/assets/164178703/44519b97-fdd9-4149-86cf-de07e6ed4fb2)
+![screencapture2_URL-shortener](https://github.com/maomao0007/Restaurant-List/assets/164178703/ef209b5c-4b4a-42c5-8531-d1c96f38aa69)
+
