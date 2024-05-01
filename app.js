@@ -65,7 +65,7 @@ app.post('/shorten', (req, res) => {
   }
 });
 
-//當使用者貼上短網址時，進行以下路由處理
+//當使用者貼上縮短的網址時，進行以下路由處理
 app.get('/:shortURL', (req, res) => {
   const shortURL = req.params.shortURL; 
   let originalURL
