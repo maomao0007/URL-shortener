@@ -19,7 +19,7 @@ This website allows you to shorten URLs, making them more concise and saving spa
    $ npm install
 4. Once the installation is complete, start the application:
    ```shell
-   $ npm run start
+   $ npm run dev
 5. If you see the following message, the server is running successfully:
    ```shell
    express server is running on http://localhost:3000
